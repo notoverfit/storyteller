@@ -11,4 +11,3 @@ def write_config(config: Config, path: str, overwrite=False) -> None:
 
     with open(path, 'w') as f:
         f.write(config_json)
-        

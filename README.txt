@@ -1,3 +1,1 @@
-storyteller: language model research, from LSTMs to transformers
-
-this porject 
+storyteller :: maxing out my 5060 TI to tell really good bedtime stories

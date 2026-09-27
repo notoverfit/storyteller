@@ -1,4 +1,4 @@
-# storyteller :: maxxing out my 5060 TI to tell really good bedtime stories
+# storyteller :: maxing out my 5060 TI to tell really good (bad) bedtime stories
 
 hi, this is a bit of a passion project after i got a new pc to try to really learn how LLMs work. of course, none of my networks are "large", in fact, they'd be considered very small networks. either way, the mechanisms of the networks are similar to the mechanisms of the chatbots that are prevalent in modern day times, but scaled to many orders of magnitude of data.
 

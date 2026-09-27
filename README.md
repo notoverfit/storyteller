@@ -55,7 +55,7 @@ the notebooks are the research log and should be read in the order above. the fi
 
 # research
 
-## the data :: tinystories
+## tinystories
 
 every model here is trained on **TinyStories** (Eldan and Li, 2023), a dataset of short, synthetic children's stories written with a small vocabulary. the idea behind the dataset is that it keeps the *language* simple enough that a very small model can still learn grammar, consistency and some basic reasoning, which makes it ideal for a single GPU.
 

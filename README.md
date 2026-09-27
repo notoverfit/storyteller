@@ -1,6 +1,6 @@
 # storyteller :: maxing out my 5060 TI to tell really good (bad) bedtime stories
 
-hi, this is a bit of a passion project after i got a new pc to try to really learn how LLMs work. of course, none of my networks are "large", in fact, they'd be considered very small networks. either way, the mechanisms of the networks are similar to the mechanisms of the chatbots that are prevalent in modern day times, but scaled to many orders of magnitude of data.
+this is a bit of a passion project after i got a new pc to try to really learn how LLMs work. of course, none of my networks are "large", in fact, they'd be considered very small networks. either way, the mechanisms of the networks are similar to the mechanisms of the chatbots that are prevalent in modern day times, but scaled to many orders of magnitude of data.
 
 the project follows one question from start to finish: *how do you get a small neural network, trained from scratch on a single consumer GPU (an RTX 5060 Ti), to tell a coherent bedtime story?* it starts from tokens and a hand-built LSTM cell, moves to an LSTM language model, then to transformers, and finally to post-training with direct preference optimisation (DPO) using a local LLM as a judge.
 

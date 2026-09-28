@@ -1,8 +1,6 @@
-# storyteller :: maxxing out my 5060 TI to tell really good bedtime stories
+# storyteller :: maxing out my 5060 TI to tell really good (bad) bedtime stories
 
-hi, this is a bit of a passion project after i got a new pc to try to really learn how LLMs work. of course, none of my networks are "large", in fact, they'd be considered very small networks. either way, the mechanisms of the networks are similar to the mechanisms of the chatbots that are prevalent in modern day times, but scaled to many orders of magnitude of data.
-
-the project follows one question from start to finish: *how do you get a small neural network, trained from scratch on a single consumer GPU (an RTX 5060 Ti), to tell a coherent bedtime story?* it starts from tokens and a hand-built LSTM cell, moves to an LSTM language model, then to transformers, and finally to post-training with direct preference optimisation (DPO) using a local LLM as a judge.
+this project follows one question from start to finish: *how do you get a small neural network, trained from scratch on a single consumer GPU (an RTX 5060 Ti), to tell a coherent bedtime story?* it starts from tokens and a hand-built LSTM cell, moves to an LSTM language model, then to transformers, and finally to post-training with direct preference optimisation (DPO) using a local LLM as a judge.
 
 ## project goals
 
@@ -55,7 +53,7 @@ the notebooks are the research log and should be read in the order above. the fi
 
 # research
 
-## the data :: tinystories
+## tinystories
 
 every model here is trained on **TinyStories** (Eldan and Li, 2023), a dataset of short, synthetic children's stories written with a small vocabulary. the idea behind the dataset is that it keeps the *language* simple enough that a very small model can still learn grammar, consistency and some basic reasoning, which makes it ideal for a single GPU.
 
@@ -110,7 +108,11 @@ the language model is `embedding (256) -> LSTM layers -> linear (vocab)`, traine
 to measure the models, i use **perplexity**, the exponential of the average validation loss:
 
 $$
-PPL = e^{\tilde{L}} = \left(\prod_{t=1}^N P(x_t | x_{<t}) \right)^{-1/N}
+\mathrm{PPL}
+= e^{L}
+= \left(
+\prod_{t=1}^{N} P(x_t \mid x_{1:t-1})
+\right)^{-1/N}
 $$
 
 it can be roughly read as the number of tokens the model is "choosing between" at each step. a perfect model has perplexity 1.

@@ -1,4 +1,4 @@
-# storyteller :: maxing out my 5060 TI to tell really good (bad) bedtime stories
+# really bad bedtime stories made by a micro transformer
 
 this project follows one question from start to finish: *how do you get a small neural network, trained from scratch on a single consumer GPU (an RTX 5060 Ti), to tell a coherent bedtime story?* it starts from tokens and a hand-built LSTM cell, moves to an LSTM language model, then to transformers, and finally to post-training with direct preference optimisation (DPO) using a local LLM as a judge.
 

@@ -108,7 +108,11 @@ the language model is `embedding (256) -> LSTM layers -> linear (vocab)`, traine
 to measure the models, i use **perplexity**, the exponential of the average validation loss:
 
 $$
-PPL = e^{\tilde{L}} = \left(\prod_{t=1}^N P(x_t | x_{<t}) \right)^{-1/N}
+\mathrm{PPL}
+= e^{L}
+= \left(
+\prod_{t=1}^{N} P(x_t \mid x_{1:t-1})
+\right)^{-1/N}
 $$
 
 it can be roughly read as the number of tokens the model is "choosing between" at each step. a perfect model has perplexity 1.

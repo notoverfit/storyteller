@@ -236,7 +236,7 @@ the 6 invalid answers are dropped. every other prompt gives 3 (chosen, rejected)
 the log probability of a completion $y$ given a prompt $x$ is the sum of its token log probabilities:
 
 $$
-\log \pi_\theta(y | x) = \sum_{t=1}^m \log \pi_\theta(y_t | x, y_{<t})
+\log \pi_\theta(y | x) = \sum_{t=1}^m \log \pi_\theta(y_t | x, y_{\lt t})
 $$
 
 only the completion tokens are counted, not the prompt. with the trained model $\pi_e$ and a frozen copy of the original $\pi_x$ as a reference, the margin is

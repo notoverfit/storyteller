@@ -13,7 +13,7 @@ a 43.8m parameter transformer gets to **1.36 validation loss (3.88 perplexity)**
 - [ ] post training
     - [X] llm-as-a-judge post-training with preferred outputs
     - [ ] llm-as-a-judge post-training with metrics scoring (creativity, correctness, etc.)
-- [ ] model optimisations, and transformer variants
+- [X] model optimisations, and transformer variants
 
 ## models
 

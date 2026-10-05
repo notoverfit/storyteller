@@ -2,7 +2,7 @@
 
 how small can a model be, trained from scratch on one consumer GPU (my RTX 5060 Ti), and still tell a bedtime story that makes sense? this repo is my attempt at answering that. i start from tokens and a homebrew LSTM cell, train an LSTM language model, get annoyed at it forgetting who the story is about, move to transformers, and then post-train the best one with direct preference optimisation (DPO) using a local llm as the judge.
 
-the short version: a 43.8m parameter transformer gets to **1.36 validation loss (3.88 perplexity)** on TinyStories, and after DPO it is preferred over its former self **56.2%** of the time. here is one of its stories, at a temperature of 0.75:
+a 43.8m parameter transformer gets to **1.36 validation loss (3.88 perplexity)** on TinyStories, and after DPO it is preferred over its former self **56.2%** of the time. here is one of its stories, at a temperature of 0.75:
 
 > A long, long time ago, there was a big, hairy bear. He was very angry because someone was trying to cut down his tree. He had a lot of hope to get his tree back. But then, he saw a little bird fly down and land on his shoulder. The bird had a hurt wing and couldn't fly. The bear felt sorry for the bird and decided to help. He gently picked up the bird and put it on a branch of the tree. The bird felt better and flew away. The bear was happy to have helped the little bird.
 

@@ -1,6 +1,6 @@
 # really bad bedtime stories made by a micro transformer
 
-how small can a model be, trained from scratch on one consumer GPU (my RTX 5060 Ti), and still tell a bedtime story that makes sense? this repo is my attempt at answering that. i start from tokens and a homebrew LSTM cell, train an LSTM language model, get annoyed at it forgetting who the story is about, move to transformers, and then post-train the best one with direct preference optimisation (DPO) using a local llm as the judge.
+how small can a model be, trained from scratch on one consumer GPU (my RTX 5060 Ti), and still tell a bedtime story that makes sense?
 
 a 43.8m parameter transformer gets to **1.36 validation loss (3.88 perplexity)** on TinyStories, and after DPO it is preferred over its former self **56.2%** of the time. here is one of its stories, at a temperature of 0.75:
 

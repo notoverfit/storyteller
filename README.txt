@@ -32,32 +32,8 @@ the weights are in weights/ and tracked with git LFS, so run `git lfs pull`
 after cloning. the retrained 10k tokeniser the transformers use is in
 weights/gpt-neo-10k-tokeniser.
 
-the lstm numbers are from a one epoch run. the saved lstm weights are from a
-3 epoch run, which came out slightly worse (2.94 loss, 18.88 perplexity).
-
-
-what i found
-------------
-
-the lstm tells something story-shaped, but loses the plot. making it wider
-did nothing (3.34 to 3.35 loss), a second layer helped (2.92), and more
-epochs didn't. it can't hold on to who the story is about; a girl becomes
-"he" one sentence later.
-
-my first transformer was worse. a homebrew, single head model with 16 narrow
-blocks only got to a training loss of ~4.52, well behind the lstm.
-
-the GPT-Neo setup changed everything. following the TinyStories paper, i
-retrained the tokeniser, switched to multi-head attention and went to a 512
-token context. 2 blocks got to 1.59, and 4 blocks with a wider feed forward
-got to 1.36, which is close to the paper. these models remember their
-characters all the way through a story.
-
-DPO helps a little. i generated 4 completions for each of 2,500 prompts, had
-qwen3.5:4b (through ollama) choose the best one, and trained on the resulting
-7,482 pairs. on 500 new prompts, the judge preferred the DPO model 281 times
-(p = 0.0063). its stories stay on track more, though it may just be learning
-the judge's biases.
+the lstm numbers are from a one epoch run, whereas the saved weights in weights/
+are from a 3 epoch run which produced slightly worse results.
 
 layout
 ------

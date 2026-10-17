@@ -1,4 +1,4 @@
-# Once upon a GPU: really bad bedtime stories from a 44m parameter transformer
+# Micro-transformers for bedtime story generation
 
 Small language models trained from scratch on TinyStories with one consumer GPU (an RTX 5060 Ti): an LSTM, two transformers, and the best transformer post-trained with direct preference optimisation (DPO), using a local LLM as the judge. The last section measures inference speed with and without a key-value cache.
 
